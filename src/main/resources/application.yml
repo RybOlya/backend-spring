@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    gcp:
+      sql:
+        instance-connection-name: <your-instance-connection-name>
+        database-name: <your-database-name>
+  datasource:
+    url: jdbc:mysql://<your-database-host>:<your-database-port>/<your-database-name>
+    username: <your-database-username>
+    password: <your-database-password>
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  port: 8090
